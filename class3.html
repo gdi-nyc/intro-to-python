@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Introduction to Python | Girl Develop It Class 3</title>
+
+    <meta name="description" content="This is the official Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/gdiaa.css" id="theme">
+  <link rel="stylesheet" href="lib/css/light.css">
+  <link rel="stylesheet" href="css/print/pdf.css" media="print">
+
+  <script src="lib/js/head.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <!-- Opening slide -->
+        <section>
+          <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+          <div class="box--small">
+            <h3><span class="green">Intro to Python Class 3</span></h3>
+          </div>
+        </section>
+
+        <!-- Block 1 25 minutes -->
+        <section>
+            <h3>Review</h3>
+            <ul class="list--xtall copy--small box">
+                <li>Lists - appending, indexing</li>
+                <li>Conditions - if, elif, else</li>
+                <li>Loops - while, for</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>What we will cover this morning</h3>
+            <ul class="list--xtall copy--small box">
+                <li class="fragment">Functions</li>
+                <li class="fragment">Method calls</li>
+                <li class="fragment">(Even) More Data Types</li>
+                <li class="fragment">Python builtin functions</li>
+            </ul>
+        </section>
+
+      <!-- FUNCTIONS -->
+
+        <section>
+            <h3>Functions</h3>
+            <p class="copy--small box--small">A named section of code that performs a specific task</p>
+            <p class="copy--small box--small fragment">This is also referred to as <strong>calling</strong> a function</p>
+            <div class="fragment"><p class="copy--small box--small ">We have already made a function call<br/>when using the <code>type</code>, <code>int</code>, or <code>float</code> functions</p>
+            <pre><code contenteditable class=" python small">
+a = '3'
+print type(a)
+a = float(a)
+            </code></pre></div>
+        </section>
+
+        <section>
+            <h3>Function calls</h3>
+            <pre><code contenteditable class="small python">
+a = 3
+print type(a)
+            </code></pre>
+            <p class="copy--small box--small">A function can take <strong>arguments</strong></p>
+            <p class="copy--small box--small">In the example above, the variable <code>a</code> is passed<br/>as an argument to the function <code>type</code></p>
+            <p class="copy--small box--small fragment">Arguments can also be called <strong>parameters</strong></p>
+            <div class="fragment "><pre><code contenteditable class="python" style="min-height: 50px;">
+# Some more function call examples
+
+int('32')
+str(32)
+            </code></pre></div>
+        </section>
+
+        <section>
+            <h3>Creating a Function</h3>
+            <p class="copy--small box--small">The following example is a <strong>function definition</strong>.<br/>This allows us to create our own functions</p>
+            <pre><code contenteditable class="python">
+def print_plus_5(x):
+    print x + 5
+            </code></pre>
+            <p class="copy--small box--small fragment">The function definition has the following parts</p>
+            <ul class="copy--xsmall box--small list--tall">
+                <li class="fragment">The <code>def</code> keyword signifies we are defining a function</li>
+                <li class="fragment">The name of the function being defined - <code>print_plus_5</code></li>
+                <li class="fragment">The arguments in parentheses - <code>x</code></li>
+                <li class="fragment">The function <strong>body</strong>, which is a block of indented code that executes when the function is called. - <code>print x + 5</code></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>What to name your arguments</h3>
+            <p class="copy--small box--small">Similar to for loops, you decide how to refer to your arguments<p>
+            <div class="copy--small box--small fragment"><p>We just used x as our argument, but I can replace that with duck and the function will work the same</p>
+            <pre><code contenteditable class="python">
+def print_plus_5(duck):
+    print duck + 5
+            </code></pre>
+            <p class="copy--small box--small fragment">When naming your functions and your
+            arguments, you should use terms based on the task at hand</p>
+        </section>
+
+
+        <section>
+            <h3>Function returns</h3>
+            <p class="copy--small box--small">A function can also <strong>return</strong> a value</p>
+            <div class="copy--small box--small fragment"><p>Return allows us to save the result and use it later</p>
+            <pre><code contenteditable class="python">
+# function without return
+def plus_5(x):
+    x + 5
+
+y = plus_5(4)
+print y
+
+#function with return
+def return_plus_5(x):
+    return x + 5
+
+y = return_plus_5(4)
+print y
+            </code></pre></div>
+        </section>
+
+        <section>
+            <h3>Functions with no arguments</h3>
+            <p class="copy--small box--small">A function does not have to take arguments,<br/>as in the following example:
+            <pre><code contenteditable class="small python">
+def grass():
+    print 'The grass is green.'
+
+grass()
+            </code></pre>
+            <p class="copy--xsmall box--small ">This is useful when the function does some work but doesn't need any parameters.<br/>i.e. The function is intended to always do the same thing</p>
+        </section>
+
+        <section>
+            <h3>Functions with more than one argument</h3>
+            <p class="copy--small box--small">A function can also take more than one argument separated by commas. For example:</p>
+            <pre><code contenteditable class="small python">
+def personal_info(name, age):
+    return "My name is " + name + " and I am " + str(age) + " years old."
+
+my_information = personal_info("Amy", 26)
+print my_information
+            </code></pre>
+        </section>
+
+
+        <section>
+          <h3>Let's Develop It</h3>
+
+          <p class="copy--small box--small">Pick one of the following exercises</p>
+
+          <ul>
+            <li><p>Write a function that a bar could use to check to see if a customer is of drinking age. <pre>isOfDrinkingAge(age)</pre></p></li>
+            <li><p>If it is a saturday in spring and it is above 65 degrees, Kermit plants flowers. Write a function to check whether he will plant flowers today. <pre>willKermitPlantFlowers(dayOfWeek, season, currentTemperature)</pre></p></li>
+            <li><p>Zach knows something is wrong with his basement if the temperature is below 50 or the humidity is above 70%. Write a function that can check whether his basement has a problem. <pre>basementIsOk(temperature, humidity)</pre></p></li>
+          </ul>
+        </section>
+
+
+        <section>
+            <h3>Function Composition</h3>
+            <p class="copy--small box--small">Functions can also call other functions.</p>
+            <p class="copy--small box--small fragment">You can do this to break up tasks into small pieces and make your code easier to follow.</p>
+            <p class="copy--small box--small fragment"><strong>Function composition</strong> is when the <strong>output</strong> of one function <strong>acts as the input</strong> of another</p>
+            <div class="fragment"><pre><code contenteditable class=" python">
+def get_name():
+    return raw_input("What is your name?")
+
+def get_email_address():
+    return raw_input("What is your address?")
+
+def register():
+    print "Please fill out the following information to register:"
+    name = get_name()
+    email = get_email_address()
+    print name, "is registered under the email address", email
+            </code></pre></div>
+        </section>
+ 
+        <section>
+          <h3>Method Calls</h3>
+            <p class="copy--small box"><strong>Methods</strong> are also called by name but are associated with a data type.</p>
+            <p class="copy--small box fragment">We have already called methods for strings and integers</p>
+            <div class="fragment"><pre><code contenteditable class=" small python">
+a = 4
+name = 'caleb'
+sentence = 'the quick brown fox did the thing with the thing'
+a_list = [1, 2, 3]
+
+print name.capitalize()
+print sentence.count('the')
+
+a_list.append(4)
+print a_list
+            </code></pre></div>
+        </section>
+
+        <section>
+            <h3>Data Type: Dictionaries</h3>
+            <p class="box--small copy--small">A <strong>dictionary</strong> is a data type of key/value pairs, defined with <code>{}</code></p>
+            <pre><code contenteditable class="small python">
+menu_categories = {
+    'food': 'stuff you eat',
+    'beverage': 'stuff you drink',
+}
+            </code></pre>
+            <p class="copy--small box--small fragment">Think of words in a dictionary. The words are keys and the definitions are values.</p>
+        </section>
+
+        <section>
+            <h3>Indexing on Dictionaries</h3>
+            <p class="box--small copy--small">Dictionaries aren't literally just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.</p>
+            <p class="box--small copy--small fragment">We can also index on dictionaries, but using the key instead of integers like in a list</p>
+            <div class="fragment">
+            <pre><code contenteditable class="small python">
+menu = {
+    'tofu': 4,
+}
+
+tofu_cost = menu['tofu']
+            </code></pre></div>
+            <p class="box--small copy--small fragment">Indexing on a key that doesn't exist results in a KeyError</p>
+        </section>
+
+        <section>
+            <h3>Dictionary Methods</h3>
+            <p class="box--small copy--small">Some of the most essential methods are <code>keys</code>, <code>values</code> and <code>items</code></p>
+            <pre><code contenteditable class="small python">
+menu = {
+    'tofu': 4,
+    'pizza': 8,
+    'baguette': 3,
+}
+
+print menu.keys()
+print menu.values()
+print menu.items()
+print menu.get('pizza')
+print menu.get('water')
+print menu.get('juice', 5)
+            </code></pre>
+            <p class="box--small copy--small">If you aren't certain a key is present, you can use the <code>get</code> method</p>
+            <p class=" box--small copy--small"><code>get</code> will return None if the key isn't present.</p>
+        </section>
+
+        <section>
+            <h3>The in operator</h3>
+            <p class="box--small copy--small">The <code>in</code> operator is used to determine if<br/>an element is in a given data type</p>
+            <div class="fragment"><p class="box--small copy--small ">For dictionaries, the keys are searched for the element.</p>
+            <pre><code contenteditable class="small python">
+color = [255, 255, 0]
+if 0 in color:
+    print '0 is in the color'
+
+menu = {'tofu': 4}
+print 'tofu' in menu
+print 4 in menu
+            </code></pre></div>
+        </section>
+
+        <section>
+            <h3>Builtins for data types</h3>
+            <p class="copy--small box--small">Python provides several functions that<br/>help us work with these data types.</p>
+            <table class="copy--xsmall">
+                <tr>
+                    <td style="width: 200px;"><code>len()</code></td>
+                    <td>Given a data type, return its length</td>
+                </tr>
+                <tr>
+                    <td><code>range()</code></td>
+                    <td>Create a list of integers in the range provided.</td>
+                </tr>
+                <tr>
+                    <td><code>sorted()</code></td>
+                    <td>Given a data type, returns a sorted copy of that data type</td>
+                </tr>
+                <tr>
+                    <td><code>enumerate()</code></td>
+                    <td>Returns a list of (index, element) from the list</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h3>Examples of using Builtins</h3>
+            <pre><code contenteditable class="python">
+# Using len() - Determines length
+print len([1, 2])
+print len("Hello")
+
+# range() - Quickly creates a list of integers
+print range(5)
+print range(5, 10)
+print range(0, 10, 2)
+
+# sorted() - Sort a given list
+grades = [93, 100, 60]
+grades = sorted(grades)
+print grades
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>String Formatting Operators</h3>
+            <pre><code contenteditable class="python">
+print 'To Do:'
+to_dos = ['work', 'sleep', 'work']
+for item in to_dos:
+    print '%s' %(item)
+
+name = 'Sally'
+print 'Her name is {}'.format(name)
+            </code></pre>
+        </section>
+
+        <section>
+          <h3>Function Practice</h3>
+          <p class="copy--small box--small">Write a function to...</p>
+          <pre><code>
+# ...add 10 to any number
+# ...divide any number by 100
+# ...add any 2 numbers
+# ...subtract any 2 numbers
+# ...convert celsius to farenheight
+# ...convert farenheight to celsius
+# ...convert inches to centimeters
+# ...convert centimeters to inches
+# ...calculate sales tax for any given total amount
+# ...calculate the area of a triangle (1/2 base * height)
+# ...calculate the volume of a rectangular prism (length * width * height)
+          </code></pre>
+        </section>
+        
+        <section>
+            <h3>Questions?</h3>
+        </section>
+
+
+
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+      </div>
+    </footer>
+</div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      rollingLinks: true,
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none 
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+  </script>
+</body>
+</html>

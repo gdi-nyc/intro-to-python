@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Introduction to Python | Girl Develop It Class 2</title>
+
+    <meta name="description" content="This is the official Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/gdiaa.css" id="theme">
+  <link rel="stylesheet" href="lib/css/light.css">
+  <link rel="stylesheet" href="css/print/pdf.css" media="print">
+
+  <script src="lib/js/head.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <!-- Opening slide -->
+        <section>
+          <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+          <div class="box--small">
+            <h3><span class="green">Intro to Python Class 2</span></h3>
+          </div>
+        </section>
+
+        <!-- Block 1 30 minutes -->
+        <section>
+            <h3>Review</h3>
+            <ul class="list--xtall box--small">
+                <li>Arithmetic and variables</li>
+                <li>Data types</li>
+                <li>Text editor, command line, and python shell</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>What we will cover the rest of today</h3>
+            <ul span class="box--small list--xtall">
+                <li class ="fragment">Boolean Expressions</li>
+                <li class ="fragment">Conditionals</li>
+                <li class ="fragment">Lists</li>
+                <li class ="fragment">Loops</li>
+            </ul>
+        </section>
+
+      <!-- BOOLEANS & CONDITIONALS -->
+        <section>
+            <h3>Boolean Expressions</h3>
+            <p class="box copy--small">We can tell the computer to compare values and return True or False. These are called <strong>Boolean expressions</strong></p>
+            <ul class="list--tall copy--xsmall">
+                <li class="fragment">Test for equality by using <code>==</code>. We can't use <code>=</code> because that is used for assignment</li>
+                <li class="fragment">Test for greater than and less than using <code>&gt;</code> and <code>&lt;</code></li>
+            </ul>
+            <pre class="fragment"><code contenteditable class="python" style="min-height: 50px;">
+a = 5
+b = 5
+print a == b
+c = 3
+print a == c
+print c &lt; a
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Boolean Expressions continued</h3>
+            <p class="box--small copy--small">The following chart shows the various Boolean operators</p>
+            <table class="copy--xsmall" style="width: auto; margin: 0 auto;">
+                <tr>
+                    <td style="width: 200px;"><code>a == b</code></td>
+                    <td>a is equal to b</td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;"><code>a != b</code></td>
+                    <td>a does not equal b</td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;"><code>a &lt; b</code></td>
+                    <td>a is less than b</td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;"><code>a &gt; b</code></td>
+                    <td>a is greater than b</td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;"><code>a &lt;= b</code></td>
+                    <td>a is less than or equal to b</td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;"><code>a &gt;= b</code></td>
+                    <td>a is greater than or equal to b</td>
+                </tr>
+            </table>
+            <pre class=""><code contenteditable class="python" style="min-height: 50px;">
+a = 3
+b = 4
+print a != b
+print a <= 3
+print a >= 4
+            </code></pre>
+            <p class="copy--xsmall">Remember: Equals does not equal "equals equals"</p>
+        </section>
+
+
+        <section>
+            <h3>Lists</h3>
+            <p class="copy--small box--small">A list is an ordered collection of elements</p>
+            <div class="fragment"><p class="copy--small box--small">In Python, a list is defined using <code>[ ]</code> with elements separated by commas, as in the following example</p>
+            <pre><code contenteditable class="small python">
+words = ['list', 'of', 'strings']
+            </code></pre>
+            </div>
+            <div class="fragment">
+            <p class="copy--small box--small">A list can, but doesn't have to be of all one type.<br/><small>A list of one type is <strong>homogenous</strong> as opposed to a list of multiple types, which is <strong>heterogeneous</strong>.</small></p>
+            <pre><code contenteditable class="small python">
+words = [0, 'list', 'of', 3, 'strings', 'and', 'numbers']
+            </code></pre></div>
+        </section>
+
+
+        <section>
+            <h3>Appending to list</h3>
+            <p class="copy--small box--small">Lists have several methods, the most useful of which is <code>append</code></p>
+            <div class="copy--small box--small">
+            <p class="copy--small box--small ">A list can be created as an empty list and have values added to it with <code>append</code></p>
+            <pre><code contenteditable class="small python">
+to_do_list = []
+to_do_list.append('buy soy milk')
+to_do_list.append('learn python')
+print to_do_list
+            </code></pre></div>
+            <p class="copy--small box--small fragment">Therefore, lists are <strong>mutable</strong></p>
+            <p class="copy--small box--small fragment">This means that a list can change values<br/>during the duration of a program</p>
+        </section>
+
+        <section>
+            <h3>Indexing</h3>
+            <p class="copy--small box--small">An element can also be obtained from a list through <strong>indexing</strong></p>
+            <p class="copy--small box--small fragment">This allows us to obtain an element if we just want one specific value.</p>
+            <div class="fragment"><p class="copy--small box--small">To index on a list, follow it immediately with <code>[index]</code>.</p>
+            <pre><code contenteditable class="small python">
+numbers = [10, 20, 30]
+print numbers[0]
+            </code></pre></div>
+            <p class="copy--small box--small fragment">Lists (and other data types) start at the number 0 and count up.</p>
+        </section>
+
+
+        <section>
+            <h3>Length and More Indexing</h3>
+
+            <p class="box--small copy--small">You can get the length of a list with <strong>len(list)</strong></p>
+            <p class="box--smail copy--small">You can also use the length of the list to index the last element.</p>
+            <pre><code contenteditable class="small python">
+to_do_list = [
+    'learn python', 'read email', 'make lunch',
+]
+print len(to_do_list)
+
+print to_do_list[0]
+print to_do_list[2]
+
+print to_do_list[len(to_do_list)]
+print to_do_list[len(to_do_list) - 1]
+            </code></pre>
+            <p class="box--small copy--xsmall fragment">An IndexError results if an index exceeds the length of the list minus 1</p>
+        </section>
+
+        <section>
+            <h3>Let's Develop It</h3>
+            <p class="copy--small box--small">Take the list below and try to do the following:</p>
+            <p class="copy--small box--small">Append to the list a chore you have to do</p>
+            <p class="copy--small box--small">Use indexing to find the first and third chores on the list</p>
+            <p class="copy--small box--small">Find the length of the list</p>
+            <p class="copy--small box--small">Use indexing to find the last chore in the list</p>
+            <pre><code contenteditable class="small python">
+['Make the bed', 'Cook dinner', 'Feed the dog', 'Buy groceries']
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Conditionals</h3>
+            <p class="copy--small box--small">When we want different code to execute dependending on certain criteria, we use a <strong>conditional</strong></p>
+            <div class="fragment box--small">
+            <p class="copy--xsmall">We achieve this using <strong>if</strong> statements</p>
+            <pre><code contenteditable class="small python">
+    if x == 5:
+        print 'x is equal to 5'
+            </code></pre></div>
+
+        </section>
+        <section>
+            <h3>Conditionals</h3>
+            <div class="fragment box--small">
+            <p class="copy--xsmall">We often want a different block to execute if the statement is false.<br/>This can be accomplished using <strong>else</strong></p>
+            <pre><code contenteditable class="small python">
+if x == 5:
+    print 'x is equal to 5'
+else:
+    print 'x is not equal to 5'
+            </code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h3>Indentation</h3>
+            <p class="copy--small box--small">In Python, <strong>blocks</strong> <span class="green">begin when text is indented</span> and<br/><span class="red">ends when it returns to the previous indentation</span></p>
+            <p class="copy--small box--small fragment">Indentation is <strong>very</strong> sensitive in python. Let's write a python file that practices indentation and conditionals</p>
+            <div class="fragment">
+            <p class="copy--small box--small">Write this into your text editor and save the file as class2.py in your gdi-intro-python folder.
+            <pre><code contenteditable class=" python">
+print "It's your birthday!"
+answer = raw_input("How old are you? ")
+age = int(answer)
+if answer &lt; 21:
+    print "You may not have a beer, but here's some juice!"
+else:
+    print "Here's some beer!"
+print "Happy birthday!"
+            </code></pre></div>
+        </section>
+
+        <section>
+            <h3>Chained conditionals</h3>
+            <p class="box--small copy--small">Conditionals can also be <strong>chained</strong></p>
+            <div class="fragment"><p class="box--small copy--small ">Chained conditionals use <code>elif</code> as an additonal check after the preceeding <code>if</code> predicate was False. For example:</p>
+            <pre><code contenteditable class=" python small">
+if x &lt; 0:
+    print "x is negative"
+elif x &gt; 0:
+    print "x is positive"
+else:
+    print "x is 0"
+            </code></pre></div>
+        </section>
+
+        <section>
+            <h3>Nested conditionals</h3>
+            <p class="box--small copy--small">Conditionals can also be <strong>nested</strong></p>
+            <p class="box--small copy--small fragment">Nested conditionals occur inside of other conditionals, and are indented over once more. When the code block is complete you move back.</p>
+            <div class="fragment"><p class="box--small copy--small">Edit your python file to contain the following:</p>
+            <pre><code contenteditable class="small python">
+print "It's your birthday!"
+answer = raw_input("How old are you? ")
+age = int(answer)
+if answer &lt; 21:
+    print "You may not have a beer, but here's some juice!"
+else:
+    beers = raw_input("How many beers do you want?")
+    beers = int(beers)
+    if beers > 3:
+        print "Oops, you're drunk!"
+    elif beers > 1:
+        print "You got a little tipsy"
+    else:
+        print "Looks like you're the designated driver"
+print "Happy birthday!"
+            </code></pre></div>
+        </section>
+
+        <!-- Let's develop it: 10 minutes -->
+        <section>
+            <h3>Let's Develop It</h3>
+            <p class="box--small copy--small">Write a program that uses if statements to determine<br/>what to do given some user input</p>
+            <p class="box--small copy--small">The code below is an example:</p>
+            <pre><code contenteditable class=" python">
+health = 100
+print "A vicious warg is chasing you."
+print "Options:"
+print "1 - Hide in the cave."
+print "2 - Climb a tree."
+input_value = raw_input("Enter choice:")
+if input_value == '1':
+    print 'You hide in a cave.'
+    print 'The warg finds you and injures your leg with its claws'
+    health = health - 10
+elif input_value == '2':
+    print 'You climb a tree.'
+    print 'The warg eventually looses interest and wanders off'
+else:
+    print 'Invalid option.'
+            </code></pre>
+        </section>
+
+
+      <!-- LOOPS -->
+        <!-- Block 2 25 minutes -->
+        <section>
+          <h3>Iteration</h3>
+          <p class="box--small copy--small">It is often useful to perform a task and to repeat the process until a certain point is reached.</p>
+          <p class="box--small copy--small fragment">The repeated execution of a set of statements is called <strong>iteration</strong></p>
+          <div class="fragment"><p class="box--small copy--small">One way to acheive this, is with the <strong>while</strong> loop.</p>
+            <pre><code contenteditable class=" small python">
+user_input = raw_input('would you like to quit? (y/n) ')
+
+while user_input != 'y':
+    user_input = raw_input('would you like to quit? (y/n) ')
+
+print 'quitters never win!'
+          </code></pre></div>
+          <p class="box--small copy--small fragment">As long as the while statement evaluates to True, the code block beneath it is repeated.</p>
+        </section>
+
+        <section>
+            <h3>While loops</h3>
+            <p class="box--small copy--small">Consider the following example that uses iteration with a while loop</p>
+            <div class="fragment"><pre><code contenteditable class="small python">
+input_value = raw_input('Enter a positive integer:') 
+user_number = int(input_value)
+while user_number > 0:
+    print "The user's number is still positive, let's subtract 1"
+    user_number = user_number - 1
+print "User's number is no longer positive."
+                                </code></pre></div>
+            <p class="copy--small box--small fragment">This implementation does not work for negative numbers. Why?</p>
+        </section>
+
+       
+        <section>
+            <h3>For loops</h3>
+            <p class="copy--small box--small">It is also useful to loop through a collection of elements, visiting each one to do some work, then stopping once all elements are processed.</p>
+            <p class="copy--small box--small fragment">This can be accomplished with a <strong>for</strong> loop</p>
+            <div class="fragment"><p class="copy--small box--small ">First, we need a collection. We create a <strong>list</strong> of numbers to loop over. This is called <code>numbers</code> in the following example</p>
+            <pre><code contenteditable class="small python">
+shipping_cost = 2.5
+prices = [3, 4, 5.25]
+costs = []
+
+for price in prices:
+    costs.append(price + shipping_cost)
+
+print costs
+            </code></pre></div>
+        </section>
+
+        <section>
+          <h3>Range</h3>
+          <p class="fragment box--small copy--small">What do you think the following functions output?</p>
+          <pre><code contenteditable class="small fragment python">
+  range(5)
+          </code></pre>
+          <pre><code contenteditable class="small fragment python">
+  range(5, 10)
+          </code></pre>
+          <pre><code contenteditable class="small fragment python">
+  range(10, 20, 2)
+          </code></pre>
+          <pre><code contenteditable class="small fragment python">
+  range(20, 8, -2)
+          </code></pre>
+        </section>
+
+        <section>
+            <h3>For loops continued</h3>
+            <p class="copy--small box--small">Let's examine the example carefully</p>
+            <pre><code contenteditable class="small python">
+for number in range(5):
+    print "The current number is:"
+    print number
+            </code></pre>
+            <p class="fragment copy--small box--small">This for loop has three parts:</p>
+            <ul class="list--tall copy--xsmall">
+                <li class="fragment">The collection to loop over - range(5)</li>
+                <li class="fragment">The name WE give each element when the loop begins again - number</li>
+                <li class="fragment">The block of statements to execute with the element - The two print statements</li>
+            </ul>
+                </section>
+
+        <section>
+        <h3>Variable name in for loops</h3>
+        <p class="copy--small box--small">In our last example, we named our variable "number".</p>
+        <p class="copy--small box--small fragment">We could have chosen any word, and the computer would process the code.</p>
+        <div class="fragment"><p class="copy--small box--small">This is a great example of the computer
+        <em>processing,</em> not <em>understanding.</em></p>
+        <pre><code contenteditable class="small python">
+for moose in range(5):
+    print "The current number is:"
+    print moose
+        </code></pre></div>
+        </section>
+
+        <!-- Let's Develop It - 10 minutes -->
+        <section>
+            <h3>Let's Develop It</h3>
+          <p class="copy--small box--small">Let's iterate through the following list:</p>
+          <p class="copy--small box--small"><pre>["Mary", "had", "a", "little", "lamb"]</pre></p>
+          <p class="copy--small box--small fragment">For each word, check if the letter "a" is in the list.</p>
+          <div class="fragment"><p class="copy--small small--box">For example:</p>
+          <pre><code contenditable class="small python">
+The word Mary contains the letter a.
+The word little does not contain the letter a.
+          </code></pre></div>
+          <p class="copy--small box--small fragment">"What about the letter "m"?</p>
+        </section>
+
+      <!-- OUTRO -->
+        <section>
+          <h3>Questions?</h3>
+        </section>
+
+        <section>
+          <h3>Exercise</h3>
+          <p>Write a script that asks the user to guess a number between 1 and 100</p>
+          <ul>
+            <li class="future"><p>If their guess is within 20, tell them they are 'warm'</p></li>
+            <li class="future"><p>If their guess is within 10, tell them they are 'hot'</p></li>
+            <li class="future"><p>If their guess is within 5, tell them they are 'scalding'</p></li>
+            <li class="future"><p>if their guess is within 50, tell them they are 'cool'</p></li>
+            <li class="future"><p>otherwise tell them they are 'cold'</p></li>
+            <li class="future"><p>If they guess the number, congratulate them and ask if they'd like to play again.</p></li>
+          </ul>
+            <h6>Optional Extra Challenge: Let them know if they are 'warmer' or 'colder' than their last guess.</h6>
+        </section>
+
+        <section>
+          <h3>Optional Boolean Practice</h3>
+
+          <p>Do this excercise from Learn Python The Hard Way</p>
+          <i>Make sure to do these problems by hand, not with python! </i>
+
+          <h6><a
+                          href="http://learnpythonthehardway.org/book/ex28.html">http://learnpythonthehardway.org/book/ex28.html</a></h6>
+        </section>
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      rollingLinks: true,
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+  </script>
+</body>
+</html>

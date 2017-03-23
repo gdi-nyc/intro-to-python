@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Introduction to Python | Girl Develop It Class 4</title>
+
+    <meta name="description" content="This is the official Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/gdiaa.css" id="theme">
+  <link rel="stylesheet" href="lib/css/light.css">
+  <link rel="stylesheet" href="css/print/pdf.css" media="print">
+
+  <script src="lib/js/head.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <!-- Opening slide -->
+      <section>
+        <img src="images/gdi_logo_badge.png" class="img--bare" height="450px" />
+        <div class="box--small">
+          <h3><span class="green">Intro to Python Class 4</span></h3>
+
+        </div>
+      </section>
+
+      <section>
+          <h3>Review</h3>
+          <ul class="box list--xtall copy--small">
+              <li>Functions</li>
+              <li>Method calls</li>
+              <li>Data Type: Dictionaries</li>
+          </ul>
+      </section>
+
+      <section>
+        <h3>What we will cover for the rest of today</h3>
+        <ul class="list--xtall copy--small box">
+            <li class="fragment">(Even) More Data Types</li>
+            <li class="fragment">Combining data types</li>
+        </ul>
+        </section>
+
+        <section>
+            <h3>Data Type: Sets</h3>
+            <p class="copy--small">Sets are unordered data types whose elements are unique. Therefore, adding a value to a set that already has it, does nothing.</p>
+            <p class="copy--small fragment">Sets can be created with comma separated elements enclosed in {} in Python 2.7 or greater.</p>
+            <p class="copy--small fragment">Very often, one will make a list and use the set() function to eliminate duplicates.</p>
+            <pre class="fragment"><code class="python">
+>>> list_a = [0, 3, 2, 0, 2, 7]
+>>> set_a = set(list_a)
+>>> print set_a
+set([0, 2, 3, 7])
+
+>>> set_b = {1, 2, 1, 3}
+>>> print set_b
+set([1, 2, 3])
+            </code></pre>
+            <p class="copy--small fragment">Sets have an add method, which like append for lists, adds an element to a set.</p>
+        </section>
+
+        <section>
+            <h3>Data Type: Lists of ... Lists</h3>
+            <p class="copy--small box--small">As we have already seen, an element in a
+            list can be other lists.</p>
+            <p class="copy--small box--small fragment">Lists inside of a list are referred to as <strong>nested</strong></p>
+            <div class="fragment"><p class="copy--small box--small">The following is a list of lists:</p>
+            <pre><code contenteditable class="small python">
+game_board = [
+    ['O', 'X', ' '],
+    [' ', 'X', ' '],
+    [' ', ' ', ' '],
+]
+            </code></pre></div>
+            <p class="copy--small box--small fragment">This can be indexed successively with <code>game_board[0][1]</code></p>
+        </section>
+
+        <section>
+            <h3>Nested Lists continued</h3>
+            <p class="copy--small box--small">A list can be appended to a list as well</p>
+            <pre><code contenteditable class="small python">
+mary_shopping_list = ['apples', 'bananas', 'chicken', 'ice cream']
+fran_shopping_list = ['ice cream', 'beef', 'peppers', 'apples']
+bob_shopping_list = ['chicken', 'peppers']
+
+family_shopping_list = []
+family_shopping_list.append(mary_shopping_list)
+family_shopping_list.append(fran_shopping_list)
+family_shopping_list.append(bob_shopping_list)
+
+print family_shopping_list
+
+for shop_list in family_shopping_list:
+    for food_item in shop_list:
+        print food_item
+            </code></pre>
+            <p class="copy--small box--small fragment">What if we want to <strong>flatten</strong> the family shopping list?</p>
+            <p class="copy--small box--small fragment">What if we want the food items in the family shopping list to be unique?</p>
+        </section>
+
+        <section>
+            <h3>Lists of Dictionaries</h3>
+            <p class="copy--small box--small">One of the most common and useful nested data structures,<br/>is a list of dictionaries</p>
+            <pre><code contenteditable class="python">
+card_a = {
+    'suit': 'spades',
+    'number': 4,
+}
+
+card_b = {
+    'suit': 'hearts',
+    'number': 8,
+}
+
+hand = [card_a, card_b]
+
+print 'The hand contains:'
+for card in hand:
+    print 'A', card['number'], 'of', card['suit']
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Dictionary of Lists</h3>
+            <p class="copy--small box--small">A dictionary can also contain values that are themselves<br/>other data types, such as lists.</p>
+            <div class="fragment"><p class="copy--xsmall box--small">Let's revisit the group of to do lists and find a better representation:</p>
+            <pre><code contenteditable class="small python">
+mary_shopping_list = ['apples', 'bananas', 'chicken', 'ice cream']
+fran_shopping_list = ['ice cream', 'beef', 'peppers', 'apples']
+bob_shopping_list = ['chicken', 'peppers']
+
+family_shopping_list = {
+    'mary': mary_shopping_list,
+    'fran': fran_shopping_list,
+    'baby': bob_shopping_list,
+}
+
+for name, shop_list in family_shopping_list.items():
+    print name, 'needs to buy: ', shop_list
+
+# Changing this later can be accomplished with
+family_shopping_list['fran'].append('strawberries')
+            </code></pre></div>
+            <p class="copy--xsmall box--small fragment">Now the to do lists can be indexed or modified by name</p>
+        </section>
+
+        <section>
+            <h3>Means of Combination</h3>
+            <p class="copy--small box--small">Lists, dictionaries, and other data types are all<br/>a means of combination.</p>
+            <p class="copy--small box--small fragment">They can be freely combined to create the<br/>data structure needed for a particular problem.</p>
+            <div class="fragment"><p class="copy--xsmall box--small">Eg. A list of dictionaries with lists</p>
+            <pre><code contenteditable class="python">
+all_tweets = [
+    {
+        'author': 'mary',
+        'handle': '@hadalittlelamb',
+        'date': '2013-01-22',
+        'tweets': [
+            'at Loco Pops enjoying a Raspberry Sage popsicle',
+            'Learning Python is so much fun',
+        ],
+    },
+]
+            </code></pre></div>
+        </section>
+
+      <!-- Block 1  - Intro to Classes and OOP - 20 minutes -->
+      <section>
+        <h3>Functions on Dictionaries</h3>
+        <p></p>
+        <pre><code contenteditable class=" python">
+character = {
+    'level': 'beginner',
+    'health': 100,
+}
+
+def injure(character, damage):
+    character['health'] = character['health'] - damage
+    if character['health'] < 0:
+        character['health'] = 0
+
+def heal(character, amount):
+    character['health'] = character['health'] + amount
+    if character['health'] > 100:
+        character['health'] = 100
+                  </code></pre>
+        </section>
+
+                 </section>
+
+                <section>
+                    <h3>Functional Python: Map</h3>
+                    <p class="copy--small box--small">Python is a not a purely functional language, but it can be used (and is commonly used) for functional programming.</p>
+                    <p class="copy--small box--small">There are four functions that are used for functional programming: Range, Filter, Map, and Reduce</p>
+ 
+                    <p class="copy--small box--small">One commonly used, higher order function<br/>(that is a Python builtin) is called <strong>map</strong></p>
+                    <pre><code contenteditable class=" python">
+# Define any function
+def sqaure(number):
+    return number ** 2
+
+# Pass the function to map along with an iterable
+squares = map(square, range(10))
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a for loop</p>
+                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a range</p>
+                    <p class="box--small copy--small fragment">Write a function that prints the double<br/>of every number from 0 to 10 using a map</p>
+                    <p class="box--small copy--small fragment">Write a map that takes in a list and appends "or I'll be a monkey's uncle" to every item in that list.  (input: [1,4], output: ["1 or I'll be a monkey's uncle"], "2 or I'll be a monkey's uncle"])</p>
+                </section>
+
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p class="box--small copy--small">Choose among any of these projects:<br/><small>(Resources available on the next page)</small></p>
+                    <ul class="copy--xsmall list--tall">
+                        <li><strong>Search the Web </strong>- Write a program that searches the web<br/>using DuckDuckGo and displays results.
+                        </li>
+                        <li><strong>Encryption </strong>- Write a program that encrypts a string from<br/>user input, or file and is able to decrypt it as well.
+                        </li>
+                        <li><strong>Command Line Game </strong>- Create a simple game that runs inside the terminal.
+                        </li>
+                </section>
+
+                <section>
+                    <h3>Let's Develop It Resources</h3>
+                    <table class="copy--small box">
+                        <tr>
+                            <td style="width: 250px;">Search the Web</td>
+                            <td style="padding-bottom: 20px;"><a href="https://github.com/crazedpsyc/python-duckduckgo/">python-duckduckgo</a> library to get started. Download duckduckgo.py and put it in the same directory as your code. Use the query() function it provides to begin. (HINT: Results are often empty, but 'related' list usually has a few hits.)</td>
+                        </tr>
+                        <tr>
+                            <td>Encryption</td>
+                            <td>Read about the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher</a> or find a similarly simple encryption mechanism online. You should find the ord() and chr() functions helpful, as well as the modulus operator '%'</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h3>Let's Develop It Resources Continued</h3>
+                    <table class="copy--small box">
+                        <tr>
+                            <td style="width: 250px;">Command Line Game</td>
+                            <td>This might be a text adventure with paragraphs of text followed by a series of choices for the user. A choice maps to another node in the story (another paragraph with choices). You might try storing the paragraphs separately in a text file. The format might be something different, such as a series of "rooms", each with a description, for the user to explore by entering commands such as "go west". Examples of these kinds of games are <a href="https://en.wikipedia.org/wiki/Colossal_Cave_Adventure">Colossal Cave Adventure</a> and <a href="https://en.wikipedia.org/wiki/Zor">Zork</a></td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h3>Future Resources</h3>
+                    <table class="box copy--xsmall">
+                        <tr>
+                            <td style="width: 30px;"><a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></td>
+                            <td style="padding-bottom: 20px;">Online book of 'practical programming for total beginners'.</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 360px;"><a href="http://docs.python.org/2/">Python.org Documentation</a></td>
+                            <td style="padding-bottom: 20px;">Official Python Documentation</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://www.greenteapress.com/thinkpython/html/index.html">Think Python</a></td>
+                            <td style="padding-bottom: 20px;">Online and print book with exercises.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a></td>
+                            <td style="padding-bottom: 20px;">Online and print book with exercises</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://developers.google.com/edu/python/">Google's Python Class</a></td>
+                            <td style="padding-bottom: 20px;">Video lectures coupled with exercises</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://newcoder.io/tutorials/">New Coder</a></td>
+                            <td style="padding-bottom: 20px;">Ideas for slightly larger projects and resources to get you started. Projects include accessing API's, scraping pages, writing IRC bots, and others.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://girldevelopit.com/">Girl Develop It</a></td>
+                            <td style="">Local workshops, events, and coding sessions</td>
+                        </tr>
+                    </table>
+                </section>
+
+        <section>
+        <h3>Survey</h3>
+        <p class="box--small copy--small fragment">Please fill out this <a href="http://bit.ly/GDI-NYC">survey</a> to let us know how you felt about this class, and if there's any ways we can improve.</p>
+        </section>
+ 
+        <section>
+            <h3>Questions?</h3>
+        </section>
+
+
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+      </div>
+    </footer>
+</div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      rollingLinks: true,
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+  </script>
+</body>
+</html>
