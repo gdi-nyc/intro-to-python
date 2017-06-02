@@ -222,7 +222,7 @@ else:
             <pre><code contenteditable class=" python">
 print "It's your birthday!"
 answer = raw_input("How old are you? ")
-age = int(answer)
+age = int(answer)  # convert to an integer from a string
 if answer &lt; 21:
     print "You may not have a beer, but here's some juice!"
 else:
@@ -238,7 +238,7 @@ print "Happy birthday!"
             <pre><code contenteditable class=" python small">
 if x &lt; 0:
     print "x is negative"
-elif x &gt; 0:
+elif x &gt; 0: 
     print "x is positive"
 else:
     print "x is 0"
