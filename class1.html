@@ -39,7 +39,7 @@
 
 
         <!-- Welcome-->
-        <section class="hide-pdf">
+        <section>
           <h3>Welcome!</h3>
           <div class = "left-align">
           <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
@@ -288,7 +288,7 @@
 'HELLO'
 >>>'welcome'.capitalize()
 'Welcome'
->>'GOOD BYE'.lower()
+>>>'GOOD BYE'.lower()
 'good bye'
             </code></pre></div>
         </section>
@@ -478,20 +478,17 @@ print 'Hello World!'
             <pre><code contenteditable class="python" style="min-height: 50px;">
 name = raw_input("What is your name?")
 age = raw_input("How old are you?")
-age_int = int(age)
 print "Your name is" + name + " and you are " age + " years old."
-
-print type(age)
-print type(age_int)
             </code></pre>
-            <p class="copy--small box--small">The user's input is always a string. Keep that in mind when working on other problems!</p>
+            <p class="copy--small box--small">The raw_input return value is always a string. Keep that in mind when working on other problems!</p>
         </section>
 
       <!-- Let's develop it: 15 minutes -->
       <section>
           <h3>Let's Develop It!</h3>
           <p class="copy--small box">Write your own program that uses raw_input<br/>and does something else with the value</p>
-          <p class="copy--xsmall box">You can use float() to treat the input as a number if you need a number,<br/>or use the input directly as a string.</p>
+          <p class="copy--xsmall box">You can use float() to treat the input as a number if you need a number,<br/>or use the input directly as a string.<br/>If you want to print a integer, use  str(int_value) to convert it to a string.</p>
+	 
       </section>
 
       <!-- OUTRO -->
