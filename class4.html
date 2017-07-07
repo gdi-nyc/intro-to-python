@@ -186,12 +186,12 @@ character = {
     'health': 100,
 }
 
-def injure(character, damage):
+def injure(damage):
     character['health'] = character['health'] - damage
     if character['health'] < 0:
         character['health'] = 0
 
-def heal(character, amount):
+def heal(amount):
     character['health'] = character['health'] + amount
     if character['health'] > 100:
         character['health'] = 100
@@ -208,7 +208,7 @@ def heal(character, amount):
                     <p class="copy--small box--small">One commonly used, higher order function<br/>(that is a Python builtin) is called <strong>map</strong></p>
                     <pre><code contenteditable class=" python">
 # Define any function
-def sqaure(number):
+def square(number):
     return number ** 2
 
 # Pass the function to map along with an iterable
