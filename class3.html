@@ -64,7 +64,7 @@
             <div class="fragment"><p class="copy--small box--small ">We have already made a function call<br/>when using the <code>type</code>, <code>int</code>, or <code>float</code> functions</p>
             <pre><code contenteditable class=" python small">
 a = '3'
-print type(a)
+print (type(a))
 a = float(a)
             </code></pre></div>
         </section>
@@ -73,7 +73,7 @@ a = float(a)
             <h3>Function calls</h3>
             <pre><code contenteditable class="small python">
 a = 3
-print type(a)
+print (type(a))
             </code></pre>
             <p class="copy--small box--small">A function can take <strong>arguments</strong></p>
             <p class="copy--small box--small">In the example above, the variable <code>a</code> is passed<br/>as an argument to the function <code>type</code></p>
@@ -91,7 +91,7 @@ str(32)
             <p class="copy--small box--small">The following example is a <strong>function definition</strong>.<br/>This allows us to create our own functions</p>
             <pre><code contenteditable class="python">
 def print_plus_5(x):
-    print x + 5
+    print (x + 5)
             </code></pre>
             <p class="copy--small box--small fragment">The function definition has the following parts</p>
             <ul class="copy--xsmall box--small list--tall">
@@ -108,7 +108,7 @@ def print_plus_5(x):
             <div class="copy--small box--small fragment"><p>We just used x as our argument, but I can replace that with duck and the function will work the same</p>
             <pre><code contenteditable class="python">
 def print_plus_5(duck):
-    print duck + 5
+    print (duck + 5)
             </code></pre>
             <p class="copy--small box--small fragment">When naming your functions and your
             arguments, you should use terms based on the task at hand</p>
@@ -125,14 +125,14 @@ def plus_5(x):
     x + 5
 
 y = plus_5(4)
-print y
+print (y)
 
 #function with return
 def return_plus_5(x):
     return x + 5
 
 y = return_plus_5(4)
-print y
+print (y)
             </code></pre></div>
         </section>
 
@@ -141,7 +141,7 @@ print y
             <p class="copy--small box--small">A function does not have to take arguments,<br/>as in the following example:
             <pre><code contenteditable class="small python">
 def grass():
-    print 'The grass is green.'
+    print ('The grass is green.')
 
 grass()
             </code></pre>
@@ -156,7 +156,7 @@ def personal_info(name, age):
     return "My name is " + name + " and I am " + str(age) + " years old."
 
 my_information = personal_info("Amy", 26)
-print my_information
+print (my_information)
             </code></pre>
         </section>
 
@@ -187,10 +187,10 @@ def get_email_address():
     return raw_input("What is your address?")
 
 def register():
-    print "Please fill out the following information to register:"
+    print ("Please fill out the following information to register:")
     name = get_name()
     email = get_email_address()
-    print name, "is registered under the email address", email
+    print (name, "is registered under the email address", email)
             </code></pre></div>
         </section>
  
@@ -204,11 +204,11 @@ name = 'caleb'
 sentence = 'the quick brown fox did the thing with the thing'
 a_list = [1, 2, 3]
 
-print name.capitalize()
-print sentence.count('the')
+print (name.capitalize())
+print (sentence.count('the'))
 
 a_list.append(4)
-print a_list
+print (a_list)
             </code></pre></div>
         </section>
 
@@ -249,12 +249,12 @@ menu = {
     'baguette': 3,
 }
 
-print menu.keys()
-print menu.values()
-print menu.items()
-print menu.get('pizza')
-print menu.get('water')
-print menu.get('juice', 5)
+print (menu.keys())
+print (menu.values())
+print (menu.items())
+print (menu.get('pizza'))
+print (menu.get('water'))
+print (menu.get('juice', 5))
             </code></pre>
             <p class="box--small copy--small">If you aren't certain a key is present, you can use the <code>get</code> method</p>
             <p class=" box--small copy--small"><code>get</code> will return None if the key isn't present.</p>
@@ -267,11 +267,11 @@ print menu.get('juice', 5)
             <pre><code contenteditable class="small python">
 color = [255, 255, 0]
 if 0 in color:
-    print '0 is in the color'
+    print ('0 is in the color')
 
 menu = {'tofu': 4}
-print 'tofu' in menu
-print 4 in menu
+print ('tofu' in menu)
+print (4 in menu)
             </code></pre></div>
         </section>
 
@@ -302,31 +302,31 @@ print 4 in menu
             <h3>Examples of using Builtins</h3>
             <pre><code contenteditable class="python">
 # Using len() - Determines length
-print len([1, 2])
-print len("Hello")
+print (len([1, 2]))
+print (len("Hello"))
 
 # range() - Quickly creates a list of integers
-print range(5)
-print range(5, 10)
-print range(0, 10, 2)
+print (range(5))
+print (range(5, 10))
+print (range(0, 10, 2))
 
 # sorted() - Sort a given list
 grades = [93, 100, 60]
 grades = sorted(grades)
-print grades
+print (grades)
             </code></pre>
         </section>
 
         <section>
             <h3>String Formatting Operators</h3>
             <pre><code contenteditable class="python">
-print 'To Do:'
+print ('To Do:')
 to_dos = ['work', 'sleep', 'work']
 for item in to_dos:
-    print '%s' %(item)
+    print ('%s' %(item))
 
 name = 'Sally'
-print 'Her name is {}'.format(name)
+print ('Her name is {}'.format(name))
             </code></pre>
         </section>
 

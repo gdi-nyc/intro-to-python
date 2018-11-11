@@ -61,11 +61,11 @@
             <pre class="fragment"><code class="python">
 >>> list_a = [0, 3, 2, 0, 2, 7]
 >>> set_a = set(list_a)
->>> print set_a
+>>> print (set_a)
 set([0, 2, 3, 7])
 
 >>> set_b = {1, 2, 1, 3}
->>> print set_b
+>>> print (set_b)
 set([1, 2, 3])
             </code></pre>
             <p class="copy--small fragment">Sets have an add method, which like append for lists, adds an element to a set.</p>
@@ -100,11 +100,11 @@ family_shopping_list.append(mary_shopping_list)
 family_shopping_list.append(fran_shopping_list)
 family_shopping_list.append(bob_shopping_list)
 
-print family_shopping_list
+print (family_shopping_list)
 
 for shop_list in family_shopping_list:
     for food_item in shop_list:
-        print food_item
+        print (food_item)
             </code></pre>
             <p class="copy--small box--small fragment">What if we want to <strong>flatten</strong> the family shopping list?</p>
             <p class="copy--small box--small fragment">What if we want the food items in the family shopping list to be unique?</p>
@@ -126,9 +126,9 @@ card_b = {
 
 hand = [card_a, card_b]
 
-print 'The hand contains:'
+print ('The hand contains:')
 for card in hand:
-    print 'A', card['number'], 'of', card['suit']
+    print ('A', card['number'], 'of', card['suit'])
             </code></pre>
         </section>
 
@@ -148,7 +148,7 @@ family_shopping_list = {
 }
 
 for name, shop_list in family_shopping_list.items():
-    print name, 'needs to buy: ', shop_list
+    print (name, 'needs to buy: ', shop_list)
 
 # Changing this later can be accomplished with
 family_shopping_list['fran'].append('strawberries')
