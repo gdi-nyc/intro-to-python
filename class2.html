@@ -221,7 +221,7 @@ else:
             <p class="copy--small box--small">Write this into your text editor and save the file as class2.py in your gdi-intro-python folder.
             <pre><code contenteditable class=" python">
 print ("It's your birthday!")
-answer = raw_input("How old are you? ")
+answer = input("How old are you? ")
 age = int(answer)
 if answer &lt; 21:
     print ("You may not have a beer, but here's some juice!")
@@ -252,12 +252,12 @@ else:
             <div class="fragment"><p class="box--small copy--small">Edit your python file to contain the following:</p>
             <pre><code contenteditable class="small python">
 print ("It's your birthday!")
-answer = raw_input("How old are you? ")
+answer = input("How old are you? ")
 age = int(answer)
 if answer &lt; 21:
     print ("You may not have a beer, but here's some juice!")
 else:
-    beers = raw_input("How many beers do you want?")
+    beers = input("How many beers do you want?")
     beers = int(beers)
     if beers > 3:
         print ("Oops, you're drunk!")
@@ -280,7 +280,7 @@ print ("A vicious warg is chasing you.")
 print ("Options:")
 print ("1 - Hide in the cave.")
 print ("2 - Climb a tree.")
-input_value = raw_input("Enter choice:")
+input_value = input("Enter choice:")
 if input_value == '1':
     print ('You hide in a cave.')
     print ('The warg finds you and injures your leg with its claws')
@@ -302,10 +302,10 @@ else:
           <p class="box--small copy--small fragment">The repeated execution of a set of statements is called <strong>iteration</strong></p>
           <div class="fragment"><p class="box--small copy--small">One way to acheive this, is with the <strong>while</strong> loop.</p>
             <pre><code contenteditable class=" small python">
-user_input = raw_input('would you like to quit? (y/n) ')
+user_input = input('would you like to quit? (y/n) ')
 
 while user_input != 'y':
-    user_input = raw_input('would you like to quit? (y/n) ')
+    user_input = input('would you like to quit? (y/n) ')
 
 print ('quitters never win!')
           </code></pre></div>
@@ -316,7 +316,7 @@ print ('quitters never win!')
             <h3>While loops</h3>
             <p class="box--small copy--small">Consider the following example that uses iteration with a while loop</p>
             <div class="fragment"><pre><code contenteditable class="small python">
-input_value = raw_input('Enter a positive integer:') 
+input_value = input('Enter a positive integer:') 
 user_number = int(input_value)
 while user_number > 0:
     print ("The user's number is still positive, let's subtract 1")
