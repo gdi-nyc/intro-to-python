@@ -207,12 +207,15 @@ def heal(character, amount):
  
                     <p class="copy--small box--small">One commonly used, higher order function<br/>(that is a Python builtin) is called <strong>map</strong></p>
                     <pre><code contenteditable class=" python">
-# Define any function
-def sqaure(number):
-    return number ** 2
 
-# Pass the function to map along with an iterable
-squares = map(square, range(10))
+  # Define any function
+  def square(number):
+      return number ** 2
+  
+  # Pass the function to map along with an iterable
+  squares = list(map(square, range(10)))
+  
+  print(squares)
                     </code></pre>
                 </section>
 
