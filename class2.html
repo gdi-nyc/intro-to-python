@@ -66,10 +66,10 @@
             <pre class="fragment"><code contenteditable class="python" style="min-height: 50px;">
 a = 5
 b = 5
-print a == b
+print (a == b)
 c = 3
-print a == c
-print c &lt; a
+print (a == c)
+print (c &lt; a)
             </code></pre>
         </section>
 
@@ -105,9 +105,9 @@ print c &lt; a
             <pre class=""><code contenteditable class="python" style="min-height: 50px;">
 a = 3
 b = 4
-print a != b
-print a <= 3
-print a >= 4
+print (a != b)
+print (a <= 3)
+print (a >= 4)
             </code></pre>
             <p class="copy--xsmall">Remember: Equals does not equal "equals equals"</p>
         </section>
@@ -138,7 +138,7 @@ words = [0, 'list', 'of', 3, 'strings', 'and', 'numbers']
 to_do_list = []
 to_do_list.append('buy soy milk')
 to_do_list.append('learn python')
-print to_do_list
+print (to_do_list)
             </code></pre></div>
             <p class="copy--small box--small fragment">Therefore, lists are <strong>mutable</strong></p>
             <p class="copy--small box--small fragment">This means that a list can change values<br/>during the duration of a program</p>
@@ -151,7 +151,7 @@ print to_do_list
             <div class="fragment"><p class="copy--small box--small">To index on a list, follow it immediately with <code>[index]</code>.</p>
             <pre><code contenteditable class="small python">
 numbers = [10, 20, 30]
-print numbers[0]
+print (numbers[0])
             </code></pre></div>
             <p class="copy--small box--small fragment">Lists (and other data types) start at the number 0 and count up.</p>
         </section>
@@ -166,13 +166,13 @@ print numbers[0]
 to_do_list = [
     'learn python', 'read email', 'make lunch',
 ]
-print len(to_do_list)
+print (len(to_do_list))
 
-print to_do_list[0]
-print to_do_list[2]
+print (to_do_list[0])
+print (to_do_list[2])
 
-print to_do_list[len(to_do_list)]
-print to_do_list[len(to_do_list) - 1]
+print (to_do_list[len(to_do_list)])
+print (to_do_list[len(to_do_list) - 1])
             </code></pre>
             <p class="box--small copy--xsmall fragment">An IndexError results if an index exceeds the length of the list minus 1</p>
         </section>
@@ -196,7 +196,7 @@ print to_do_list[len(to_do_list) - 1]
             <p class="copy--xsmall">We achieve this using <strong>if</strong> statements</p>
             <pre><code contenteditable class="small python">
     if x == 5:
-        print 'x is equal to 5'
+        print ('x is equal to 5')
             </code></pre></div>
 
         </section>
@@ -206,9 +206,9 @@ print to_do_list[len(to_do_list) - 1]
             <p class="copy--xsmall">We often want a different block to execute if the statement is false.<br/>This can be accomplished using <strong>else</strong></p>
             <pre><code contenteditable class="small python">
 if x == 5:
-    print 'x is equal to 5'
+    print ('x is equal to 5')
 else:
-    print 'x is not equal to 5'
+    print ('x is not equal to 5')
             </code></pre>
             </div>
         </section>
@@ -220,14 +220,14 @@ else:
             <div class="fragment">
             <p class="copy--small box--small">Write this into your text editor and save the file as class2.py in your gdi-intro-python folder.
             <pre><code contenteditable class=" python">
-print "It's your birthday!"
-answer = raw_input("How old are you? ")
+print ("It's your birthday!")
+answer = input("How old are you? ")
 age = int(answer)
-if answer &lt; 21:
-    print "You may not have a beer, but here's some juice!"
+if age &lt; 21:
+    print ("You may not have a beer, but here's some juice!")
 else:
-    print "Here's some beer!"
-print "Happy birthday!"
+    print ("Here's some beer!")
+print ("Happy birthday!")
             </code></pre></div>
         </section>
 
@@ -237,11 +237,11 @@ print "Happy birthday!"
             <div class="fragment"><p class="box--small copy--small ">Chained conditionals use <code>elif</code> as an additonal check after the preceeding <code>if</code> predicate was False. For example:</p>
             <pre><code contenteditable class=" python small">
 if x &lt; 0:
-    print "x is negative"
+    print ("x is negative")
 elif x &gt; 0:
-    print "x is positive"
+    print ("x is positive")
 else:
-    print "x is 0"
+    print ("x is 0")
             </code></pre></div>
         </section>
 
@@ -251,21 +251,21 @@ else:
             <p class="box--small copy--small fragment">Nested conditionals occur inside of other conditionals, and are indented over once more. When the code block is complete you move back.</p>
             <div class="fragment"><p class="box--small copy--small">Edit your python file to contain the following:</p>
             <pre><code contenteditable class="small python">
-print "It's your birthday!"
-answer = raw_input("How old are you? ")
+print ("It's your birthday!")
+answer = input("How old are you? ")
 age = int(answer)
-if answer &lt; 21:
-    print "You may not have a beer, but here's some juice!"
+if age &lt; 21:
+    print ("You may not have a beer, but here's some juice!")
 else:
-    beers = raw_input("How many beers do you want?")
+    beers = input("How many beers do you want?")
     beers = int(beers)
     if beers > 3:
-        print "Oops, you're drunk!"
+        print ("Oops, you're drunk!")
     elif beers > 1:
-        print "You got a little tipsy"
+        print ("You got a little tipsy")
     else:
-        print "Looks like you're the designated driver"
-print "Happy birthday!"
+        print ("Looks like you're the designated driver")
+print ("Happy birthday!")
             </code></pre></div>
         </section>
 
@@ -276,20 +276,20 @@ print "Happy birthday!"
             <p class="box--small copy--small">The code below is an example:</p>
             <pre><code contenteditable class=" python">
 health = 100
-print "A vicious warg is chasing you."
-print "Options:"
-print "1 - Hide in the cave."
-print "2 - Climb a tree."
-input_value = raw_input("Enter choice:")
+print ("A vicious warg is chasing you.")
+print ("Options:")
+print ("1 - Hide in the cave.")
+print ("2 - Climb a tree.")
+input_value = input("Enter choice:")
 if input_value == '1':
-    print 'You hide in a cave.'
-    print 'The warg finds you and injures your leg with its claws'
+    print ('You hide in a cave.')
+    print ('The warg finds you and injures your leg with its claws')
     health = health - 10
 elif input_value == '2':
-    print 'You climb a tree.'
-    print 'The warg eventually looses interest and wanders off'
+    print ('You climb a tree.')
+    print ('The warg eventually looses interest and wanders off')
 else:
-    print 'Invalid option.'
+    print ('Invalid option.')
             </code></pre>
         </section>
 
@@ -302,12 +302,12 @@ else:
           <p class="box--small copy--small fragment">The repeated execution of a set of statements is called <strong>iteration</strong></p>
           <div class="fragment"><p class="box--small copy--small">One way to acheive this, is with the <strong>while</strong> loop.</p>
             <pre><code contenteditable class=" small python">
-user_input = raw_input('would you like to quit? (y/n) ')
+user_input = input('would you like to quit? (y/n) ')
 
 while user_input != 'y':
-    user_input = raw_input('would you like to quit? (y/n) ')
+    user_input = input('would you like to quit? (y/n) ')
 
-print 'quitters never win!'
+print ('quitters never win!')
           </code></pre></div>
           <p class="box--small copy--small fragment">As long as the while statement evaluates to True, the code block beneath it is repeated.</p>
         </section>
@@ -316,12 +316,12 @@ print 'quitters never win!'
             <h3>While loops</h3>
             <p class="box--small copy--small">Consider the following example that uses iteration with a while loop</p>
             <div class="fragment"><pre><code contenteditable class="small python">
-input_value = raw_input('Enter a positive integer:') 
+input_value = input('Enter a positive integer:') 
 user_number = int(input_value)
 while user_number > 0:
-    print "The user's number is still positive, let's subtract 1"
+    print ("The user's number is still positive, let's subtract 1")
     user_number = user_number - 1
-print "User's number is no longer positive."
+print ("User's number is no longer positive.")
                                 </code></pre></div>
             <p class="copy--small box--small fragment">This implementation does not work for negative numbers. Why?</p>
         </section>
@@ -340,25 +340,8 @@ costs = []
 for price in prices:
     costs.append(price + shipping_cost)
 
-print costs
+print (costs)
             </code></pre></div>
-        </section>
-
-        <section>
-          <h3>Range</h3>
-          <p class="fragment box--small copy--small">What do you think the following functions output?</p>
-          <pre><code contenteditable class="small fragment python">
-  range(5)
-          </code></pre>
-          <pre><code contenteditable class="small fragment python">
-  range(5, 10)
-          </code></pre>
-          <pre><code contenteditable class="small fragment python">
-  range(10, 20, 2)
-          </code></pre>
-          <pre><code contenteditable class="small fragment python">
-  range(20, 8, -2)
-          </code></pre>
         </section>
 
         <section>
@@ -366,8 +349,8 @@ print costs
             <p class="copy--small box--small">Let's examine the example carefully</p>
             <pre><code contenteditable class="small python">
 for number in range(5):
-    print "The current number is:"
-    print number
+    print ("The current number is:")
+    print (number)
             </code></pre>
             <p class="fragment copy--small box--small">This for loop has three parts:</p>
             <ul class="list--tall copy--xsmall">
@@ -385,8 +368,8 @@ for number in range(5):
         <em>processing,</em> not <em>understanding.</em></p>
         <pre><code contenteditable class="small python">
 for moose in range(5):
-    print "The current number is:"
-    print moose
+    print ("The current number is:")
+    print (moose)
         </code></pre></div>
         </section>
 
